@@ -12,7 +12,7 @@ tensorboardX
 ## 对抗训练方式
 ### [FGSM](https://arxiv.org/pdf/1412.6572.pdf)  
 FGSM是Goodfellow在2015年提出的方法。模型的梯度可以表示为：  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://github.com/Usaodon/Test/blob/main/FGSM1.png" width="229" height="40">  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![](https://latex.codecogs.com/svg.image?\LARGE&space;g&space;=&space;\bigtriangledown&space;_{x}L(\Theta&space;,x,y))  
 根据梯度增大的方向，可以使用符号函数：  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![](https://latex.codecogs.com/svg.image?\LARGE&space;r_{adv}=\epsilon&space;\cdot&space;sign(g))  
 该方式在模型中的具体应用应为：  
