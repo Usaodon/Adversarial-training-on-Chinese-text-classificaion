@@ -64,7 +64,6 @@ if __name__ == '__main__':
     need_dropout = True
 
     config.adv_mode = args.adv_mode
-    test(config, model, test_iter, need_dropout=False)
 
     if args.adv_mode == 'Free':
         adv_model = Free(model)
