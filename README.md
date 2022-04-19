@@ -12,9 +12,9 @@ tensorboardX
 ## 对抗训练方式
 ### [FGSM](https://arxiv.org/pdf/1412.6572.pdf)  
 FGSM是Goodfellow在2015年提出的方法。模型的梯度可以表示为：  
-![](https://latex.codecogs.com/svg.image?\LARGE&space;g=\bigtriangledown&space;_{x}L(\Theta&space;,x,y)#pic_center)  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://github.com/Usaodon/Test/blob/main/FGSM1.png" width="229" height="40">  
 根据梯度增大的方向，可以使用符号函数：  
-![](https://latex.codecogs.com/svg.image?\LARGE&space;r_{adv}=\epsilon&space;\cdot&space;sign(g))  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![](https://latex.codecogs.com/svg.image?\LARGE&space;r_{adv}=\epsilon&space;\cdot&space;sign(g))  
 该方式在模型中的具体应用应为：  
 ```
           outputs = model(trains)
@@ -30,10 +30,11 @@ FGSM是Goodfellow在2015年提出的方法。模型的梯度可以表示为：
 ```  
 ### [FGM](https://arxiv.org/pdf/1605.07725.pdf)  
 FGM是对FGSM进行的改进，在扰动上进行了缩放。实验表明，相比FGSM能够获得更好的对抗样本。具体步骤与FGSM类似。  
-![](https://latex.codecogs.com/svg.image?\LARGE&space;r_{adv}=\epsilon&space;\tfrac{g}{\left\|&space;g\right\|_{2}})
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![](https://latex.codecogs.com/svg.image?\LARGE&space;r_{adv}=\epsilon&space;\tfrac{g}{\left\|&space;g\right\|_{2}})
 ### [PGD](https://arxiv.org/pdf/1706.06083.pdf)  
-PGD论文指出, FGM其实是为使鞍点公式的内部最大化的简单的一步方案。一个更强大的对手是多步的变体，它本质上是负损失函数上的投影梯度下降。
-![](https://latex.codecogs.com/svg.image?\LARGE&space;r_{adv,t&plus;1}=r_{adv,t}&plus;\alpha&space;\cdot&space;\frac{g}{\left\|&space;g\right\|_{2}}&space;\quad&space;and&space;\quad&space;&space;r_{adv}\in&space;[-\epsilon&space;,\epsilon&space;])  
+PGD论文指出, FGM其实是为使鞍点公式的内部最大化的简单的一步方案。  
+一个更具对抗性的对手是多步的变体，它本质上是负损失函数上的投影梯度下降。  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![](https://latex.codecogs.com/svg.image?\LARGE&space;r_{adv,t&plus;1}=r_{adv,t}&plus;\alpha&space;\cdot&space;\frac{g}{\left\|&space;g\right\|_{2}}&space;\quad&space;and&space;\quad&space;&space;r_{adv}\in&space;[-\epsilon&space;,\epsilon&space;])  
 该方式在模型中的具体应用应为：
 ```
             outputs = model(trains)
@@ -58,7 +59,7 @@ PGD论文指出, FGM其实是为使鞍点公式的内部最大化的简单的一
 ### [Free](https://proceedings.neurips.cc/paper/2019/file/7503cfacd12053d309b6bed5c89de212-Paper.pdf)  
 FGSM，FGM以及PGD都为模型带来了对抗示例，虽然有效，但是计算量在增加。例如PGD中会计算K+1次前后向。  
 为了提升训练速度，论文提出Free，主要思想是在PGD的基础上，每经过一步就更新一次参数，并复用上一步的扰动。  
-![](https://latex.codecogs.com/svg.image?\LARGE&space;r_{adv,t&plus;1}=r_{adv,t}&plus;\epsilon&space;\cdot&space;sign(g))  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![](https://latex.codecogs.com/svg.image?\LARGE&space;r_{adv,t&plus;1}=r_{adv,t}&plus;\epsilon&space;\cdot&space;sign(g))  
 计算公式类似FGSM，实质上就是重复执行K次的FGSM。  
 该方式在模型中的具体应用应为：
 ```
