@@ -1,2 +1,2 @@
 # Adversarial-training-on-Chinese-text-classificaion
-本文是针对中文文本分类
+基于中文文本分类模型的对抗训练
