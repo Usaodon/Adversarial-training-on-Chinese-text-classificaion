@@ -1,0 +1,18 @@
+Test Loss:  0.28,  Test Acc: 91.48%
+Precision, Recall and F1-Score...
+               precision    recall  f1-score   support
+
+      finance     0.9138    0.9010    0.9074      1000
+       realty     0.9235    0.9420    0.9327      1000
+       stocks     0.8776    0.8530    0.8651      1000
+    education     0.9465    0.9560    0.9512      1000
+      science     0.8834    0.8560    0.8695      1000
+      society     0.8961    0.9230    0.9094      1000
+     politics     0.8937    0.9000    0.8969      1000
+       sports     0.9517    0.9650    0.9583      1000
+         game     0.9234    0.9280    0.9257      1000
+entertainment     0.9362    0.9240    0.9300      1000
+
+     accuracy                         0.9148     10000
+    macro avg     0.9146    0.9148    0.9146     10000
+ weighted avg     0.9146    0.9148    0.9146     10000
