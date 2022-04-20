@@ -68,18 +68,25 @@ if __name__ == '__main__':
     if args.adv_mode == 'Free':
         adv_model = Free(model)
         config.learning_rate = 1e-4
+        config.save_path = 'THUCNews/saved_dict/TextCNN_Free.ckpt'
+        need_dropout = False
         train_free(config, model, train_iter, dev_iter, test_iter, adv_model)
+        #test(config, model, test_iter, need_dropout=need_dropout)
     else:
         if args.adv_mode == 'FGSM':
             adv_model = FGSM(model)
+            config.save_path = 'THUCNews/saved_dict/TextCNN_FGSM.ckpt'
             need_dropout = False
         elif args.adv_mode == 'FGM':
             adv_model = FGM(model)
+            config.save_path = 'THUCNews/saved_dict/TextCNN_FGM.ckpt'
             need_dropout = False
         elif args.adv_mode == 'PGD':
             adv_model = PGD(model)
+            config.save_path = 'THUCNews/saved_dict/TextCNN_PGD.ckpt'
             need_dropout = False
         train(config, model, train_iter, dev_iter, test_iter, adv_model, need_dropout=need_dropout)
+        #test(config, model, test_iter, need_dropout=need_dropout)
 
 
 
