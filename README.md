@@ -92,6 +92,7 @@ FGSM，FGM以及PGD都为模型带来了对抗示例，虽然有效，但是计�
 Baseline模型为TextCNN。对抗训练方式包括FGSM,FGM, PGD和Free。  
 使用precision, recall以及f1-score对训练结果进行评估。  
 ## 实验结果  
+实验结果分析以及鲁棒性测试请参考：[对抗训练评估报告](https://github.com/Usaodon/Adversarial-training-on-Chinese-text-classificaion/blob/main/%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E8%AF%84%E4%BC%B0%E6%8A%A5%E5%91%8A.pdf)  
   
 |        | precision | recall | f1-score |
 |  ----  | ----  | ---- | ---- |
@@ -99,7 +100,7 @@ Baseline模型为TextCNN。对抗训练方式包括FGSM,FGM, PGD和Free。
 | FGSM  | 0.9160 | 0.9156 | 0.9156 |
 | FGM  | 0.9195 | 0.9189 | 0.9189 |
 | PGD  | 0.9179 | 0.9175 | 0.9174 |
-| Free  | 0.9216 | 0.9217 | 0.9216 |  
+| Free  | 0.9216 | 0.9217 | 0.9216 |    
 ## 使用方法
 ```
 #训练并测试
