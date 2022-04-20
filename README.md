@@ -125,3 +125,4 @@ python run.py --model TextCNN --adv_mode Free
 [3]Madry, Aleksander, et al. "Towards deep learning models resistant to adversarial attacks." arXiv preprint arXiv:1706.06083 (2017).  
 [4]Shafahi, Ali, et al. "Adversarial training for free!." Advances in Neural Information Processing Systems 32 (2019).  
 [5]Zhu, Chen, et al. "Freelb: Enhanced adversarial training for language understanding." (2019).  
+[6]Lee, Junghoon, Jounghee Kim, and Pilsung Kang. "Back-Translated Task Adaptive Pretraining: Improving Accuracy and Robustness on Text Classification." arXiv preprint arXiv:2107.10474 (2021).
