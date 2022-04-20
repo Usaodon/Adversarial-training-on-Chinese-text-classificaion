@@ -63,7 +63,7 @@ FGSM，FGM以及PGD都为模型带来了对抗示例，虽然有效，但是计�
 计算公式类似FGSM，实质上就是重复执行K次的FGSM。  
 该方式在模型中的具体应用应为：
 ```
-optimizer.zero_grad()
+                optimizer.zero_grad()
                 adv_model.attack(r_at)                            #添加扰动
                 r_at = r_at.detach()
                 r_at.requires_grad_()
